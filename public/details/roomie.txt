@@ -1,0 +1,4 @@
+Developed for HackUTD X and won 2nd place overall in the Hackathon.
+
+In the program, an occupied or open room is determined by whether a class is happening in that room at that moment or not, respectively.
+A motion sensor system was also implemented that indicates that someone might be in the room, meaning that the room may or may not be taken.

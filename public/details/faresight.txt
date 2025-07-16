@@ -1,0 +1,8 @@
+Team project for the FinTech club at UTD.
+
+Used a dataset containing New York rideshare data from 2018-2022 with over 1 million entries.
+From the dataset, performed:
+(1) data cleaning for missing entries
+(2) feature engineering to identify the frequency of rides for all 263 New York taxi zones for every time of year.
+
+Created a machine learning model using the transformed data to determine the most optimal taxi zones for rideshare drivers at any given time/day of the year

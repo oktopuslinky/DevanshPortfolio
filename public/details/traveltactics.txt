@@ -1,0 +1,7 @@
+Team project built with Google Maps, Places, and Photos APIs to help users discover nearby restaurants, attractions, and custom search results. 
+
+The map and locations are displayed using the Google Maps API.
+The Google Places API is used to fetch nearby locations and their information.
+The Google Photos API is used to fetch a photo of the location.
+
+Users can view location photos, explore map markers, and launch Google Maps navigation directly from the app.

@@ -1,0 +1,3 @@
+Team project developed for AIM Spring 2025, a mentorship program within AIS (Artificial Intelligence Society) at The University of Texas at Dallas.
+
+The application uses trained deep learning image classification models to detect eye diseases from 4 different types of retinal scans: Fundus, OCT, slit lamp, and corneal topography.
