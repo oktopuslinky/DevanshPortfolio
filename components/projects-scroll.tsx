@@ -38,7 +38,7 @@ const projects: Project[] = [
     ],
     image: "/placeholder.svg?height=400&width=600",
     videoUrl: "https://www.youtube.com/watch?v=TST5XnsnWGM",
-    tags: ["Next.js", "Firebase", "Tailwind CSS", "TypeScript"],
+    tags: ["React", "JSX"],
     githubUrl: "https://github.com/Kandles11/Roomie",
   },
   {
