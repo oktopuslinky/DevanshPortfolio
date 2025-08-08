@@ -51,8 +51,8 @@ const projects: Project[] = [
       "Developed the user interface for displaying search results and location details",
     ],
     image: "/placeholder.svg?height=400&width=600",
-    videoUrl: "/placeholder-video.mp4",
-    tags: ["Google API"],
+    videoUrl: "",
+    tags: ["Google API", "Flutter"],
     demoUrl: "https://traveltactics.vercel.app/",
     githubUrl: "https://github.com/UTD-Fall-2024-Sec-7/Group_1_Phase1",
   },
@@ -66,7 +66,7 @@ const projects: Project[] = [
       "Presented the project at AIM night, a semesterly event showcasing AI/ML projects to an audience of judges and peers",
     ],
     image: "/placeholder.svg?height=400&width=600",
-    videoUrl: "/placeholder-video.mp4",
+    videoUrl: "",
     tags: ["Pytorch", "Image Classification"],
     githubUrl: "https://github.com/saiperam/AIM-OptiClarity",
   },
@@ -77,8 +77,8 @@ const projects: Project[] = [
     details: "/details/faresight.txt", // File path
     //"Includes 3D virtual tour integration, advanced search filters, and an interactive mortgage calculator. Built with a focus on SEO and user experience.",
     image: "/placeholder.svg?height=400&width=600",
-    videoUrl: "/placeholder-video.mp4",
-    tags: ["Vue.js", "Express", "PostgreSQL", "Google Maps API"],
+    videoUrl: "",
+    tags: ["React", "Machine Learning", "PyTorch"],
   },
   {
     id: 5,
@@ -104,8 +104,8 @@ const projects: Project[] = [
       "Helped design the UI/UX for the app using Figma"
     ],
     image: "/placeholder.svg?height=400&width=600",
-    videoUrl: "/placeholder-video.mp4",
-    tags: ["React Native", "GraphQL", "Node.js", "MongoDB"],
+    videoUrl: "",
+    tags: ["Flutter", "Firebase"],
     githubUrl: "https://github.com/orgs/acm-projects/teams/taskmate",
   },
 ];
@@ -312,35 +312,45 @@ export default function ProjectsScroll() {
               <DialogTitle>{selectedProject?.title}</DialogTitle>
               <DialogClose />
             </DialogHeader>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="video-container">
-                {selectedProject?.videoUrl.includes("youtube.com") ? (
-                  <iframe
-                    src={selectedProject.videoUrl.replace("watch?v=", "embed/")}
-                    title={selectedProject.title}
-                    className="w-full h-[300px] object-cover rounded-lg"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                ) : (
-                  <video
-                    src={selectedProject?.videoUrl}
-                    title={selectedProject?.title}
-                    className="w-full h-[300px] object-cover rounded-lg"
-                    controls
-                    autoPlay
-                    muted
-                    loop
-                  />
-                )}
-              </div>
+            <div
+              className={`grid ${
+                selectedProject?.videoUrl ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
+              } gap-6`}
+            >
+              {selectedProject?.videoUrl && (
+                <div className="video-container">
+                  {selectedProject.videoUrl.includes("youtube.com") ? (
+                    <iframe
+                      src={selectedProject.videoUrl.replace("watch?v=", "embed/")}
+                      title={selectedProject.title}
+                      className="w-full h-[300px] object-cover rounded-lg"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <video
+                      src={selectedProject.videoUrl}
+                      title={selectedProject.title}
+                      className="w-full h-[300px] object-cover rounded-lg"
+                      controls
+                      autoPlay
+                      muted
+                      loop
+                    />
+                  )}
+                </div>
+              )}
               <div className="prose dark:prose-invert">
-                <b><h3>Project Details</h3></b>
+                <b>
+                  <h3>Project Details</h3>
+                </b>
                 <p className="project-details">{isLoading ? "Loading..." : selectedProject?.details}</p>
                 <br />
                 {selectedProject?.contributions && (
                   <>
-                    <b><DialogDescription>Personal Contributions</DialogDescription></b>
+                    <b>
+                      <DialogDescription>Personal Contributions</DialogDescription>
+                    </b>
                     <ul className="list-disc pl-5">
                       {selectedProject.contributions.map((contribution, index) => (
                         <li key={index}>{contribution}</li>
