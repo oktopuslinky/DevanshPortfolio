@@ -308,7 +308,7 @@ export default function ProjectsScroll() {
         {/* Modal Dialog */}
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto md:max-h-[85vh] sm:max-h-[80vh]">
-            <DialogHeader className="sticky top-0 bg-background z-10 pb-4">
+            <DialogHeader className="bg-background z-10 pb-4">
               <DialogTitle>{selectedProject?.title}</DialogTitle>
               <DialogClose />
             </DialogHeader>
