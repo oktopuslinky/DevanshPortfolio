@@ -308,9 +308,8 @@ export default function ProjectsScroll() {
         {/* Modal Dialog */}
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto md:max-h-[85vh] sm:max-h-[80vh]">
-            <DialogHeader className="bg-background z-10 pb-4">
+            <DialogHeader className="z-10 pb-4 pr-24 sm:pr-16 md:pr-16 pt-2">
               <DialogTitle>{selectedProject?.title}</DialogTitle>
-              <DialogClose />
             </DialogHeader>
             <div
               className={`grid ${
